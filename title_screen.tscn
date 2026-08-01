@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://bb27sbf8lm8oa"]
+
+[ext_resource type="Script" uid="uid://bqk07c7pv6mji" path="res://title_screen.gd" id="1_ak2if"]
+[ext_resource type="Texture2D" uid="uid://c7eg0qv8r6l5k" path="res://_.jpeg" id="1_v6p8y"]
+
+[node name="TitleScreen" type="Node2D" unique_id=1253231775]
+script = ExtResource("1_ak2if")
+
+[node name="Background" type="TextureRect" parent="." unique_id=629642519]
+offset_right = 1151.0
+offset_bottom = 646.0
+texture = ExtResource("1_v6p8y")
+
+[node name="Start" type="Button" parent="Background" unique_id=208492606]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 250.0
+offset_right = 679.0
+offset_bottom = 295.0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 22
+text = "Start Game"
+
+[node name="Settings" type="Button" parent="Background" unique_id=1944422869]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 319.0
+offset_right = 679.0
+offset_bottom = 364.0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 22
+text = "Settings"
+
+[node name="Quit" type="Button" parent="Background" unique_id=1953265103]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 387.0
+offset_right = 680.0
+offset_bottom = 432.0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 22
+text = "Quit
+"
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=2061387311]
+offset_left = 191.0
+offset_top = 115.0
+offset_right = 1099.0
+offset_bottom = 492.0
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 80
+text = "Dona's Donut Run "
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1226439692]
+offset_left = 448.0
+offset_top = 249.0
+offset_right = 681.0
+offset_bottom = 571.0
+
+[connection signal="pressed" from="Background/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Background/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Background/Quit" to="." method="_on_quit_pressed"]
