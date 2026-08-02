@@ -1,4 +1,59 @@
 [gd_scene format=3 uid="uid://bjsih0k3firgk"]
 
+[ext_resource type="Texture2D" uid="uid://c7eg0qv8r6l5k" path="res://_.jpeg" id="1_187gu"]
+[ext_resource type="Texture2D" uid="uid://b6d60j1p6qhhv" path="res://icon.svg" id="2_3mivm"]
+
 [node name="Level scene" type="Node2D" unique_id=1158777303]
 position = Vector2(328, 280)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=638081028]
+offset_left = -324.0
+offset_top = -276.0
+offset_right = 822.0
+offset_bottom = 369.0
+texture = ExtResource("1_187gu")
+metadata/_edit_lock_ = true
+
+[node name="DonutContainer" type="HBoxContainer" parent="." unique_id=1540408943]
+offset_left = -69.0
+offset_top = -124.0
+offset_right = 587.0
+offset_bottom = 14.0
+
+[node name="Donut" type="TextureRect" parent="DonutContainer" unique_id=1284618571]
+layout_mode = 2
+texture = ExtResource("2_3mivm")
+
+[node name="Donut2" type="TextureRect" parent="DonutContainer" unique_id=1043811891]
+layout_mode = 2
+texture = ExtResource("2_3mivm")
+
+[node name="Donut3" type="TextureRect" parent="DonutContainer" unique_id=613613323]
+layout_mode = 2
+texture = ExtResource("2_3mivm")
+
+[node name="Donut4" type="TextureRect" parent="DonutContainer" unique_id=2138234413]
+layout_mode = 2
+texture = ExtResource("2_3mivm")
+
+[node name="Donut5" type="TextureRect" parent="DonutContainer" unique_id=1206528255]
+layout_mode = 2
+texture = ExtResource("2_3mivm")
+
+[node name="Level" type="RichTextLabel" parent="." unique_id=1192824428]
+offset_left = 40.0
+offset_top = 76.0
+offset_right = 523.0
+offset_bottom = 141.0
+theme_override_colors/default_color = Color(0.9318117, 0.4224089, 0.9373587, 1)
+theme_override_font_sizes/normal_font_size = 38
+text = "Level #"
+
+[node name="Timer" type="RichTextLabel" parent="." unique_id=1123148914]
+offset_left = 198.0
+offset_top = 155.0
+offset_right = 293.0
+offset_bottom = 216.0
+theme_override_colors/default_color = Color(0.9961111, 0.34435645, 0.9999998, 1)
+theme_override_font_sizes/normal_font_size = 38
+text = "0.0"
