@@ -1,10 +1,39 @@
 [gd_scene format=3 uid="uid://bjsih0k3firgk"]
 
 [ext_resource type="Texture2D" uid="uid://c7eg0qv8r6l5k" path="res://_.jpeg" id="1_187gu"]
-[ext_resource type="Texture2D" uid="uid://b6d60j1p6qhhv" path="res://icon.svg" id="2_3mivm"]
+[ext_resource type="Texture2D" uid="uid://dy86x3b1x2klg" path="res://donut for game.png" id="2_187gu"]
+
+[sub_resource type="GDScript" id="GDScript_lwxgr"]
+resource_name = "timer_screen"
+script/source = "extends Node2D
+@onready var donut_container: HBoxContainer = $DonutContainer
+@onready var donut: TextureRect = $DonutContainer/Donut 
+@onready var donut_2: TextureRect = $DonutContainer/Donut2
+@onready var donut_3: TextureRect = $DonutContainer/Donut3
+@onready var donut_4: TextureRect = $DonutContainer/Donut4
+@onready var donut_5: TextureRect = $DonutContainer/Donut5
+@onready var level: RichTextLabel = $Level
+@onready var timer: RichTextLabel = $Timer
+
+var time
+
+func _ready() -> void:
+	await timer(5.0) #using the function created
+	if Global.minigames_done < 3
+			Global.minigames_done = Global.minigames_done + 1
+			get_tree()change_scene_to_file(\"res://scenes/minigame_\" + str(Global.minigames_done) + \".tscn\") 
+	
+	else:
+			get_tree().cha
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [node name="Level scene" type="Node2D" unique_id=1158777303]
 position = Vector2(328, 280)
+script = SubResource("GDScript_lwxgr")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=638081028]
 offset_left = -324.0
@@ -15,45 +44,50 @@ texture = ExtResource("1_187gu")
 metadata/_edit_lock_ = true
 
 [node name="DonutContainer" type="HBoxContainer" parent="." unique_id=1540408943]
-offset_left = -69.0
-offset_top = -124.0
-offset_right = 587.0
-offset_bottom = 14.0
+offset_left = -88.0
+offset_top = -128.0
+offset_right = 618.0
+offset_bottom = 10.0
 
 [node name="Donut" type="TextureRect" parent="DonutContainer" unique_id=1284618571]
 layout_mode = 2
-texture = ExtResource("2_3mivm")
+texture = ExtResource("2_187gu")
+expand_mode = 3
 
 [node name="Donut2" type="TextureRect" parent="DonutContainer" unique_id=1043811891]
 layout_mode = 2
-texture = ExtResource("2_3mivm")
+texture = ExtResource("2_187gu")
+expand_mode = 3
 
 [node name="Donut3" type="TextureRect" parent="DonutContainer" unique_id=613613323]
 layout_mode = 2
-texture = ExtResource("2_3mivm")
+texture = ExtResource("2_187gu")
+expand_mode = 3
 
 [node name="Donut4" type="TextureRect" parent="DonutContainer" unique_id=2138234413]
 layout_mode = 2
-texture = ExtResource("2_3mivm")
+texture = ExtResource("2_187gu")
+expand_mode = 3
 
 [node name="Donut5" type="TextureRect" parent="DonutContainer" unique_id=1206528255]
 layout_mode = 2
-texture = ExtResource("2_3mivm")
+texture = ExtResource("2_187gu")
+expand_mode = 3
 
 [node name="Level" type="RichTextLabel" parent="." unique_id=1192824428]
-offset_left = 40.0
-offset_top = 76.0
-offset_right = 523.0
-offset_bottom = 141.0
+offset_left = 50.0
+offset_top = 47.0
+offset_right = 533.0
+offset_bottom = 112.0
 theme_override_colors/default_color = Color(0.9318117, 0.4224089, 0.9373587, 1)
-theme_override_font_sizes/normal_font_size = 38
+theme_override_font_sizes/normal_font_size = 42
 text = "Level #"
 
 [node name="Timer" type="RichTextLabel" parent="." unique_id=1123148914]
-offset_left = 198.0
-offset_top = 155.0
-offset_right = 293.0
-offset_bottom = 216.0
+offset_left = 219.0
+offset_top = 173.0
+offset_right = 314.0
+offset_bottom = 234.0
 theme_override_colors/default_color = Color(0.9961111, 0.34435645, 0.9999998, 1)
-theme_override_font_sizes/normal_font_size = 38
+theme_override_font_sizes/normal_font_size = 42
 text = "0.0"
